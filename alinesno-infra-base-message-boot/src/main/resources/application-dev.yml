@@ -1,0 +1,10 @@
+server:
+  port: 30103
+
+# spring 配置
+spring:
+  application:
+    name: alinesno-infra-base-message-boot
+  devtools:
+    restart:
+      enabled: true
