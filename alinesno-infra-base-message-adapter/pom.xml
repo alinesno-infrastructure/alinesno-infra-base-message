@@ -22,6 +22,12 @@
 			<version>${revision}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
 	</dependencies>
 
 </project>

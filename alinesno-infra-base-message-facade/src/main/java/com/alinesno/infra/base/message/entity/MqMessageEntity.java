@@ -36,7 +36,6 @@ import com.baomidou.mybatisplus.annotation.TableName;
  */
 @TableName("mq_message")
 public class MqMessageEntity extends InfraBaseEntity {
-    private static final long serialVersionUID = 1L;
 
     /**
      * 主题
@@ -58,10 +57,10 @@ public class MqMessageEntity extends InfraBaseEntity {
 
     /**
      * 状态
-     * @see com.alinesno.cloud.base.message.enums.MessageStatusEnum
+     * 
      */
     @TableField("status")
-    private String status;
+    private int status;
 
     /**
      * 重试次数
@@ -135,11 +134,11 @@ public class MqMessageEntity extends InfraBaseEntity {
         this.data = data;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 

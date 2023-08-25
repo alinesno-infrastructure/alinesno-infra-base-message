@@ -57,7 +57,7 @@ public class MqMessageHistoryEntity extends InfraBaseEntity {
 
     /**
      * 状态
-     * @see com.alinesno.cloud.base.message.enums.MessageStatusEnum
+     * 
      */
     @TableField("status")
     private String status;

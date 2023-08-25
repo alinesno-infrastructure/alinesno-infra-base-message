@@ -37,6 +37,9 @@ import java.util.Date;
 @TableName("mq_message_fail")
 public class MqMessageFailEntity extends InfraBaseEntity {
 
+    @TableField("message_id")
+    private Long messageId ;
+
     /**
      * 主题
      */
@@ -57,7 +60,7 @@ public class MqMessageFailEntity extends InfraBaseEntity {
 
     /**
      * 状态
-     * @see com.alinesno.cloud.base.message.enums.MessageStatusEnum
+     * 
      */
     @TableField("status")
     private String status;
@@ -109,6 +112,14 @@ public class MqMessageFailEntity extends InfraBaseEntity {
      */
     @TableField("error_msg")
     private String errorMsg;
+
+    public Long getMessageId() {
+        return messageId;
+    }
+
+    public void setMessageId(Long messageId) {
+        this.messageId = messageId;
+    }
 
     public String getTopic() {
         return topic;
