@@ -2,21 +2,34 @@ package com.alinesno.infra.base.message.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+/**
+ * MqProperties 类用于读取消息队列的配置属性。
+ *
+ * @author luoxiaodong
+ * @version 1.0.0
+ */
 @ConfigurationProperties(prefix = "alinesno.base.message")
 public class MqProperties {
 
-   private int maxRetryCount ;
-   private int maxFailCount ;
-   private int outTime ;
-   private int deathCount ;
+    /**
+     * 最大重试次数。
+     */
+    private int maxRetryCount;
 
-    public int getMaxFailCount() {
-        return maxFailCount;
-    }
+    /**
+     * 最大失败次数。
+     */
+    private int maxFailCount;
 
-    public void setMaxFailCount(int maxFailCount) {
-        this.maxFailCount = maxFailCount;
-    }
+    /**
+     * 超时时间。
+     */
+    private int outTime;
+
+    /**
+     * 死亡次数。
+     */
+    private int deathCount;
 
     public int getMaxRetryCount() {
         return maxRetryCount;
@@ -24,6 +37,14 @@ public class MqProperties {
 
     public void setMaxRetryCount(int maxRetryCount) {
         this.maxRetryCount = maxRetryCount;
+    }
+
+    public int getMaxFailCount() {
+        return maxFailCount;
+    }
+
+    public void setMaxFailCount(int maxFailCount) {
+        this.maxFailCount = maxFailCount;
     }
 
     public int getOutTime() {

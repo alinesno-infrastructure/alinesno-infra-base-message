@@ -1,5 +1,11 @@
 package com.alinesno.infra.base.message.enums;
 
+/**
+ * MqStatusEnum 枚举类定义了消息队列的状态。
+ *
+ * @author luoxiaodong
+ * @version 1.0.0
+ */
 public enum MqStatusEnum {
 
     PRE_COMMIT(1, "预提交"),

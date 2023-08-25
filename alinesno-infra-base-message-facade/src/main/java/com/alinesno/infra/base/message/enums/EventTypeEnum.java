@@ -1,5 +1,11 @@
 package com.alinesno.infra.base.message.enums;
 
+/**
+ * EventTypeEnum 枚举类定义了事件类型。
+ *
+ * @author luoxiaodong
+ * @version 1.0.0
+ */
 public enum EventTypeEnum {
 
     // 处理已死亡消息

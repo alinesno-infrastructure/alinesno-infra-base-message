@@ -12,40 +12,59 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * MqController 类提供了消息相关的接口。
+ * 该类包含了发送消息、批量发送消息和消息接收的方法。
+ *
+ * @author luoxiaodong
+ * @version 1.0.0
+ */
 @Scope
 @RestController
 @RequestMapping("/v1/api/base/message")
 public class MqController {
 
-    private static final Logger log = LoggerFactory.getLogger(MqController.class) ;
+    private static final Logger log = LoggerFactory.getLogger(MqController.class);
 
     @Autowired
-    private IMqMessageService messageService ;
+    private IMqMessageService messageService;
 
+    /**
+     * 发送消息接口。
+     *
+     * @param mqMessageDto MqMessageDto 对象
+     * @return AjaxResult 对象
+     */
     @PostMapping("/sendMessage")
-    public AjaxResult sendMessage(@RequestBody MqMessageDto mqMessageDto){
-
-        log.debug("message = {}" , mqMessageDto);
-        messageService.sendMessage(mqMessageDto) ;
-
-        return AjaxResult.success() ;
+    public AjaxResult sendMessage(@RequestBody MqMessageDto mqMessageDto) {
+        log.debug("message = {}", mqMessageDto);
+        messageService.sendMessage(mqMessageDto);
+        return AjaxResult.success();
     }
 
+    /**
+     * 批量发送消息接口。
+     *
+     * @param mqList 包含多个 MqMessageDto 对象的列表
+     * @return AjaxResult 对象
+     */
     @PostMapping("/batchSendMessage")
-    public AjaxResult batchSendMessage(@RequestBody List<MqMessageDto> mqList){
-
-        log.debug("mqList = {}" , mqList );
-        messageService.batchSendMessage(mqList) ;
-
-        return AjaxResult.success() ;
+    public AjaxResult batchSendMessage(@RequestBody List<MqMessageDto> mqList) {
+        log.debug("mqList = {}", mqList);
+        messageService.batchSendMessage(mqList);
+        return AjaxResult.success();
     }
 
+    /**
+     * 消息接收接口。
+     *
+     * @param consumerDto ConsumerDto 对象
+     * @return AjaxResult 对象
+     */
     @PostMapping("/messageReceiver")
-    public AjaxResult messageReceiver(@RequestBody ConsumerDto consumerDto){
-
-        log.debug("consumerDto = {}" , consumerDto );
-        messageService.messageReceiver(consumerDto) ;
-
-        return AjaxResult.success() ;
+    public AjaxResult messageReceiver(@RequestBody ConsumerDto consumerDto) {
+        log.debug("consumerDto = {}", consumerDto);
+        messageService.messageReceiver(consumerDto);
+        return AjaxResult.success();
     }
 }

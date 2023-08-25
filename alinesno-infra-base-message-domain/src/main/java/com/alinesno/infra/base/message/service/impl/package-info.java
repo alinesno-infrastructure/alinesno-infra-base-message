@@ -1,1 +1,1 @@
-package com.alinesno.infra.base.message.api.provider;
+package com.alinesno.infra.base.message.service.impl;

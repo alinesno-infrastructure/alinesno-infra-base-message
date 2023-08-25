@@ -17,10 +17,17 @@ import java.util.List;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * MqSchedule 类是一个定时任务调度器，用于处理已超时和发送失败的消息。
+ * 当应用程序启动时，它会监听 ContextRefreshedEvent 事件，并在事件触发时执行定时任务。
+ *
+ * @author luoxiaodong
+ * @version 1.0.0
+ */
 @Component
 public class MqSchedule implements ApplicationListener<ContextRefreshedEvent> {
 
-    private static final Logger log = LoggerFactory.getLogger(MqSchedule.class) ;
+    private static final Logger log = LoggerFactory.getLogger(MqSchedule.class);
 
     @Autowired
     private MqEventPublisher publisher;
@@ -28,9 +35,10 @@ public class MqSchedule implements ApplicationListener<ContextRefreshedEvent> {
     @Autowired
     private IMqMessageService mqMessageService;
 
-    // 处理已超时消息
+    /**
+     * 定时处理已超时的消息。
+     */
     private void scheduledOuttimeMq() {
-
         new ScheduledThreadPoolExecutor(1)
                 .scheduleWithFixedDelay(() -> {
                     try {
@@ -38,21 +46,20 @@ public class MqSchedule implements ApplicationListener<ContextRefreshedEvent> {
 
                         if (CollectionUtils.isNotEmpty(mqList)) {
                             mqList.forEach(mq -> {
-
                                 final boolean result = mqMessageService.sendMessage(mq);
                                 publisher.publishEvent(mq, result, EventTypeEnum.OUT_TIME_EVENT.getCode());
                             });
                         }
-
                     } catch (Exception e) {
-                        log.error("error:{}" , e.getMessage());
+                        log.error("error: {}", e.getMessage());
                     }
-                }, 30, 60*1000 , TimeUnit.SECONDS);
+                }, 30, 60 * 1000, TimeUnit.SECONDS);
     }
 
-    // 处理发送失败消息
+    /**
+     * 定时处理发送失败的消息。
+     */
     private void scheduledFailMq() {
-
         new ScheduledThreadPoolExecutor(1)
                 .scheduleWithFixedDelay(() -> {
                     try {
@@ -60,22 +67,19 @@ public class MqSchedule implements ApplicationListener<ContextRefreshedEvent> {
 
                         if (CollectionUtils.isNotEmpty(mqList)) {
                             mqList.forEach(mq -> {
-
                                 final boolean result = mqMessageService.sendMessage(mq);
-                                publisher.publishEvent(mq, result , EventTypeEnum.FAILURE_EVENT.getCode());
+                                publisher.publishEvent(mq, result, EventTypeEnum.FAILURE_EVENT.getCode());
                             });
                         }
-
                     } catch (Exception e) {
-                        log.error("error:{}" , e.getMessage());
+                        log.error("error: {}", e.getMessage());
                     }
-                }, 30, 60*1000 , TimeUnit.SECONDS);
-
+                }, 30, 60 * 1000, TimeUnit.SECONDS);
     }
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
-        log.debug("contextRefreshedEvent = {}" , contextRefreshedEvent);
+        log.debug("contextRefreshedEvent = {}", contextRefreshedEvent);
         scheduledOuttimeMq();
         scheduledFailMq();
     }
