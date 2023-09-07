@@ -1,6 +1,7 @@
 package com.alinesno.infra.base.message.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
 
 /**
  * MqProperties 类用于读取消息队列的配置属性。
@@ -8,6 +9,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @author luoxiaodong
  * @version 1.0.0
  */
+@Component
 @ConfigurationProperties(prefix = "alinesno.base.message")
 public class MqProperties {
 

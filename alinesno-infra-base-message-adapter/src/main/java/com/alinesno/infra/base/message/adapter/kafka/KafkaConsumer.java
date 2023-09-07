@@ -22,7 +22,7 @@ public class KafkaConsumer {
      *
      * @param record Kafka 消息记录
      */
-    @KafkaListener(topics = {"alinesno-infra-message-business-callback"})
+    @KafkaListener(topics = {"alinesno-infra-message-business-callback"} , groupId = "1")
     public void listen(ConsumerRecord<String, String> record) {
         log.debug("kafka的key: " + record.key());
         log.debug("kafka的value: " + record.value());
