@@ -1,5 +1,8 @@
 package com.alinesno.infra.base.message.entity;
 
+import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnComment;
+import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnType;
+import lombok.Data;
 import cn.afterturn.easypoi.excel.annotation.Excel;
 import com.alinesno.infra.common.facade.mapper.entity.InfraBaseEntity;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -27,6 +30,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
  * @version 1.0.0
  */
 @TableName("statistical_data")
+@Data
 public class StatisticalDataEntity extends InfraBaseEntity {
 
     /**
@@ -34,6 +38,8 @@ public class StatisticalDataEntity extends InfraBaseEntity {
      */
     @TableField("user_id")
     @Excel(name = "用户id")
+	@ColumnType(length=50)
+	@ColumnComment("用户id")
     private String userId;
 
     /**
@@ -41,6 +47,8 @@ public class StatisticalDataEntity extends InfraBaseEntity {
      */
     @TableField("total")
     @Excel(name = "总数")
+	@ColumnType(length=10)
+	@ColumnComment("总数")
     private Long total;
 
     /**
@@ -48,6 +56,8 @@ public class StatisticalDataEntity extends InfraBaseEntity {
      */
     @TableField("prepared_send")
     @Excel(name = "预发送")
+	@ColumnType(length=255)
+	@ColumnComment("预发送")
     private Long preparedSend;
 
     /**
@@ -55,6 +65,8 @@ public class StatisticalDataEntity extends InfraBaseEntity {
      */
     @TableField("has_send")
     @Excel(name = "已发送")
+	@ColumnType(length=1)
+	@ColumnComment("已发送")
     private Long hasSend;
 
     /**
@@ -62,6 +74,8 @@ public class StatisticalDataEntity extends InfraBaseEntity {
      */
     @TableField("has_receive")
     @Excel(name = "已接收")
+	@ColumnType(length=1)
+	@ColumnComment("已接收")
     private Long hasReceive;
 
     /**
@@ -69,6 +83,8 @@ public class StatisticalDataEntity extends InfraBaseEntity {
      */
     @TableField("has_dead")
     @Excel(name = "已死亡")
+	@ColumnType(length=1)
+	@ColumnComment("已死亡")
     private Long hasDead;
 
     /**
@@ -76,6 +92,8 @@ public class StatisticalDataEntity extends InfraBaseEntity {
      */
     @TableField("today_total")
     @Excel(name = "今日总数")
+	@ColumnType(length=10)
+	@ColumnComment("今日总数")
     private Long todayTotal;
 
     /**
@@ -83,6 +101,8 @@ public class StatisticalDataEntity extends InfraBaseEntity {
      */
     @TableField("today_prepared_send")
     @Excel(name = "今日预发送")
+	@ColumnType(length=10)
+	@ColumnComment("今日预发送")
     private Long todayPreparedSend;
 
     /**
@@ -90,6 +110,8 @@ public class StatisticalDataEntity extends InfraBaseEntity {
      */
     @TableField("today_has_send")
     @Excel(name = "今日已发送")
+	@ColumnType(length=1)
+	@ColumnComment("今日已发送")
     private Long todayHasSend;
 
     /**
@@ -97,6 +119,8 @@ public class StatisticalDataEntity extends InfraBaseEntity {
      */
     @TableField("today_has_receive")
     @Excel(name = "今日已接收")
+	@ColumnType(length=255)
+	@ColumnComment("今日已接收")
     private Long todayHasReceive;
 
     /**
@@ -104,93 +128,7 @@ public class StatisticalDataEntity extends InfraBaseEntity {
      */
     @TableField("today_has_dead")
     @Excel(name = "今日已死亡")
+	@ColumnType(length=1)
+	@ColumnComment("今日已死亡")
     private Long todayHasDead;
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public Long getTotal() {
-        return total;
-    }
-
-    public void setTotal(Long total) {
-        this.total = total;
-    }
-
-    public Long getPreparedSend() {
-        return preparedSend;
-    }
-
-    public void setPreparedSend(Long preparedSend) {
-        this.preparedSend = preparedSend;
-    }
-
-    public Long getHasSend() {
-        return hasSend;
-    }
-
-    public void setHasSend(Long hasSend) {
-        this.hasSend = hasSend;
-    }
-
-    public Long getHasReceive() {
-        return hasReceive;
-    }
-
-    public void setHasReceive(Long hasReceive) {
-        this.hasReceive = hasReceive;
-    }
-
-    public Long getHasDead() {
-        return hasDead;
-    }
-
-    public void setHasDead(Long hasDead) {
-        this.hasDead = hasDead;
-    }
-
-    public Long getTodayTotal() {
-        return todayTotal;
-    }
-
-    public void setTodayTotal(Long todayTotal) {
-        this.todayTotal = todayTotal;
-    }
-
-    public Long getTodayPreparedSend() {
-        return todayPreparedSend;
-    }
-
-    public void setTodayPreparedSend(Long todayPreparedSend) {
-        this.todayPreparedSend = todayPreparedSend;
-    }
-
-    public Long getTodayHasSend() {
-        return todayHasSend;
-    }
-
-    public void setTodayHasSend(Long todayHasSend) {
-        this.todayHasSend = todayHasSend;
-    }
-
-    public Long getTodayHasReceive() {
-        return todayHasReceive;
-    }
-
-    public void setTodayHasReceive(Long todayHasReceive) {
-        this.todayHasReceive = todayHasReceive;
-    }
-
-    public Long getTodayHasDead() {
-        return todayHasDead;
-    }
-
-    public void setTodayHasDead(Long todayHasDead) {
-        this.todayHasDead = todayHasDead;
-    }
 }

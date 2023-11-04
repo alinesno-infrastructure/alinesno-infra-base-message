@@ -1,5 +1,8 @@
 package com.alinesno.infra.base.message.entity;
 
+import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnComment;
+import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnType;
+import lombok.Data;
 import com.alinesno.infra.common.facade.mapper.entity.InfraBaseEntity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -27,6 +30,7 @@ import cn.afterturn.easypoi.excel.annotation.Excel;
  * @version 1.0.0
  */
 @TableName("mq_topic")
+@Data
 public class MqTopicEntity extends InfraBaseEntity {
 
     /**
@@ -34,6 +38,8 @@ public class MqTopicEntity extends InfraBaseEntity {
      */
     @TableField("topic")
     @Excel(name = "消息主题")
+	@ColumnType(length=255)
+	@ColumnComment("消息主题")
     private String topic;
 
     /**
@@ -41,6 +47,8 @@ public class MqTopicEntity extends InfraBaseEntity {
      */
     @TableField("bizId")
     @Excel(name = "业务线")
+	@ColumnType(length=50)
+	@ColumnComment("业务线")
     private String bizId;
 
     /**
@@ -48,6 +56,8 @@ public class MqTopicEntity extends InfraBaseEntity {
      */
     @TableField("author")
     @Excel(name = "负责人")
+	@ColumnType(length=255)
+	@ColumnComment("负责人")
     private String author;
 
     /**
@@ -55,6 +65,8 @@ public class MqTopicEntity extends InfraBaseEntity {
      */
     @TableField("alarmEmails")
     @Excel(name = "告警邮箱")
+	@ColumnType(length=255)
+	@ColumnComment("告警邮箱")
     private String alarmEmails;
 
     /**
@@ -62,45 +74,7 @@ public class MqTopicEntity extends InfraBaseEntity {
      */
     @TableField("biz_name")
     @Excel(name = "业务线名称")
+	@ColumnType(length=255)
+	@ColumnComment("业务线名称")
     private String bizName;
-
-    public String getTopic() {
-        return topic;
-    }
-
-    public void setTopic(String topic) {
-        this.topic = topic;
-    }
-
-    public String getBizId() {
-        return bizId;
-    }
-
-    public void setBizId(String bizId) {
-        this.bizId = bizId;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public String getAlarmEmails() {
-        return alarmEmails;
-    }
-
-    public void setAlarmEmails(String alarmEmails) {
-        this.alarmEmails = alarmEmails;
-    }
-
-    public String getBizName() {
-        return bizName;
-    }
-
-    public void setBizName(String bizName) {
-        this.bizName = bizName;
-    }
 }
