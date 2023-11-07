@@ -1,5 +1,8 @@
 package com.alinesno.infra.base.message.entity;
 
+import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnComment;
+import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnType;
+import lombok.Data;
 import com.alinesno.infra.common.facade.mapper.entity.InfraBaseEntity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -13,33 +16,22 @@ import com.baomidou.mybatisplus.annotation.TableName;
  * @version 1.0.0
  */
 @TableName("special_cause")
+@Data
 public class SpecialCauseEntity extends InfraBaseEntity {
 
     /**
      * 消息ID
      */
     @TableField("message_id")
+	@ColumnType(length=50)
+	@ColumnComment("消息ID")
     private long messageId;
 
     /**
      * 错误消息
      */
     @TableField("error_msg")
+	@ColumnType(length=255)
+	@ColumnComment("错误消息")
     private String errorMsg;
-
-    public long getMessageId() {
-        return messageId;
-    }
-
-    public void setMessageId(long messageId) {
-        this.messageId = messageId;
-    }
-
-    public String getErrorMsg() {
-        return errorMsg;
-    }
-
-    public void setErrorMsg(String errorMsg) {
-        this.errorMsg = errorMsg;
-    }
 }

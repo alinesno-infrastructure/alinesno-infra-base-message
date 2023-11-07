@@ -1,5 +1,8 @@
 package com.alinesno.infra.base.message.entity;
 
+import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnComment;
+import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnType;
+import lombok.Data;
 import com.alinesno.infra.common.facade.mapper.entity.InfraBaseEntity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -35,24 +38,31 @@ import java.util.Date;
  * @version 1.0.0
  */
 @TableName("mq_message_history")
+@Data
 public class MqMessageHistoryEntity extends InfraBaseEntity {
 
     /**
      * 主题
      */
     @TableField("topic")
+	@ColumnType(length=255)
+	@ColumnComment("主题")
     private String topic;
 
     /**
      * 消费组
      */
     @TableField("mq_group")
+	@ColumnType(length=50)
+	@ColumnComment("消费组")
     private String mqGroup;
 
     /**
      * 消息内容
      */
     @TableField("data")
+	@ColumnType(length=255)
+	@ColumnComment("消息内容")
     private String data;
 
     /**
@@ -60,149 +70,71 @@ public class MqMessageHistoryEntity extends InfraBaseEntity {
      * 
      */
     @TableField("status")
+	@ColumnType(length=1)
+	@ColumnComment("状态")
     private String status;
 
     /**
      * 重试次数
      */
     @TableField("retryCount")
+	@ColumnType(length=1)
+	@ColumnComment("重试次数")
     private int retryCount;
 
     /**
      * 分片id
      */
     @TableField("shardingId")
+	@ColumnType(length=10)
+	@ColumnComment("分片id")
     private int shardingId;
 
     /**
      * 是否死亡
      */
     @TableField("has_dead")
+	@ColumnType(length=1)
+	@ColumnComment("是否死亡")
     private int hasDead;
 
     /**
      * 超时时间
      */
     @TableField("timeout")
+	@ColumnType(length=2)
+	@ColumnComment("超时时间")
     private Long timeout;
 
     /**
      * 生效时间
      */
     @TableField("effectTime")
+	@ColumnType(length=8)
+	@ColumnComment("生效时间")
     private Date effectTime;
 
     /**
      * 流转日志
      */
     @TableField("log")
+	@ColumnType(length=255)
+	@ColumnComment("流转日志")
     private String log;
 
     /**
      * 业务id
      */
     @TableField("business_id")
+	@ColumnType(length=50)
+	@ColumnComment("业务id")
     private String businessId;
 
     /**
      * 异常消息
      */
     @TableField("error_msg")
+	@ColumnType(length=255)
+	@ColumnComment("异常消息")
     private String errorMsg;
-
-    public String getTopic() {
-        return topic;
-    }
-
-    public void setTopic(String topic) {
-        this.topic = topic;
-    }
-
-    public String getMqGroup() {
-        return mqGroup;
-    }
-
-    public void setMqGroup(String mqGroup) {
-        this.mqGroup = mqGroup;
-    }
-
-    public String getData() {
-        return data;
-    }
-
-    public void setData(String data) {
-        this.data = data;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public int getRetryCount() {
-        return retryCount;
-    }
-
-    public void setRetryCount(int retryCount) {
-        this.retryCount = retryCount;
-    }
-
-    public int getShardingId() {
-        return shardingId;
-    }
-
-    public void setShardingId(int shardingId) {
-        this.shardingId = shardingId;
-    }
-
-    public int getHasDead() {
-        return hasDead;
-    }
-
-    public void setHasDead(int hasDead) {
-        this.hasDead = hasDead;
-    }
-
-    public Long getTimeout() {
-        return timeout;
-    }
-
-    public void setTimeout(Long timeout) {
-        this.timeout = timeout;
-    }
-
-    public Date getEffectTime() {
-        return effectTime;
-    }
-
-    public void setEffectTime(Date effectTime) {
-        this.effectTime = effectTime;
-    }
-
-    public String getLog() {
-        return log;
-    }
-
-    public void setLog(String log) {
-        this.log = log;
-    }
-
-    public String getBusinessId() {
-        return businessId;
-    }
-
-    public void setBusinessId(String businessId) {
-        this.businessId = businessId;
-    }
-
-    public String getErrorMsg() {
-        return errorMsg;
-    }
-
-    public void setErrorMsg(String errorMsg) {
-        this.errorMsg = errorMsg;
-    }
 }

@@ -1,5 +1,8 @@
 package com.alinesno.infra.base.message.entity;
 
+import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnComment;
+import com.gitee.sunchenbin.mybatis.actable.annotation.ColumnType;
+import lombok.Data;
 import com.alinesno.infra.common.facade.mapper.entity.InfraBaseEntity;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -23,33 +26,22 @@ import com.baomidou.mybatisplus.annotation.TableName;
  * @version 1.0.0
  */
 @TableName("mq_biz")
+@Data
 public class MqBizEntity extends InfraBaseEntity {
 
     /**
      * 业务线
      */
     @TableField("biz_name")
+	@ColumnType(length=255)
+	@ColumnComment("业务线")
     private String bizName;
 
     /**
      * 顺序
      */
     @TableField("ex_order")
+	@ColumnType(length=10)
+	@ColumnComment("顺序")
     private Long exOrder;
-
-    public String getBizName() {
-        return bizName;
-    }
-
-    public void setBizName(String bizName) {
-        this.bizName = bizName;
-    }
-
-    public Long getExOrder() {
-        return exOrder;
-    }
-
-    public void setExOrder(Long exOrder) {
-        this.exOrder = exOrder;
-    }
 }
