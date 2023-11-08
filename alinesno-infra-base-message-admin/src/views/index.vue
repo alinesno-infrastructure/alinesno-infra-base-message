@@ -14,14 +14,10 @@
                 <span><i class="el-icon-monitor"></i>
                   {{ currentEnvClusterObj.clusterName }}
                 </span>
-                <span>
-                  <i class="el-icon-link"></i> 
-                  应用地址: {{ currentEnvClusterObj.apiServerUrl }}
-                </span>
               </div>
             </div>
             <div class="title-desc">
-              集群状态展示集群资源的概览和详情，您可以查看集群资源的监控数据和用量排行情况。
+                  {{ currentEnvClusterObj.desc }}
             </div>
           </div>
         </div>
@@ -52,7 +48,8 @@ import OperationWorkspaceService from './operation-workspace/service.vue'
 const currentEnvClusterObj = ref({
   appName : '分布式消息管理服务'  , 
   clusterName: '可靠性消息中间件集成'  , 
-  apiServerUrl: 'http://portal.infra.linesno.com'
+  apiServerUrl: 'http://portal.infra.linesno.com' , 
+  desc: '基于高可用分布式集群技术的消息中间件服务,具有大规模、高可靠、高并发访问、可扩展'
 }) 
 
 </script>

@@ -59,19 +59,6 @@ export const constantRoutes = [
         name: '/index',
         meta: { title: '首页', icon: 'dashboard', affix: true }
       },
-
-      // {
-      //   path: '/dashboard/smartService',
-      //   component: () => import('@/views/smartService'),
-      //   name: '/dashboard/smartService',
-      //   meta: { title: '智能客服', icon: 'dashboard', affix: true }
-      // },
-      // {
-      //   path: '/dashboard/serviceList',
-      //   component: () => import('@/views/serviceList'),
-      //   name: '/dashboard/serviceList',
-      //   meta: { title: '服务列表', icon: 'dashboard', affix: true }
-      // },
       {
         path: '/dashboard/suportTechnique',
         component: () => import('@/views/suportTechnique'),
@@ -83,60 +70,46 @@ export const constantRoutes = [
         component: () => import('@/views/learnPanel'),
         name: '/dashboard/learnPanel',
         meta: { title: '学习手册', icon: 'dashboard', affix: true }
-      },
+      }, 
 
-      // ->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+      // >>>>>>>>>>>>>> message_router_start >>>>>>>>>>>>>>>>>>>>>
       {
-        path: '/createGateway',
-        name: 'createGateway',
-        hidden: true,
-        component: () => import('@/views/gateway/createGateway'),
-        meta: { title: '创建网关服务', icon: 'dashboard', affix: true }
-      },
+        path: '/base/message/alert/index',
+        component: () => import('@/views/base/message/alert/index'),
+        name: '/base/message/alert/index',
+        meta: { title: '告警配置', icon: 'dashboard', affix: true }
+      }, 
       {
-        path: '/gatewayTopology',
-        name: 'gatewayTopology',
-        hidden: true,
-        component: () => import('@/views/gateway/gatewayTopology'),
-        meta: { title: '网关路由拓扑结构', icon: 'dashboard', affix: true }
-      },
+        path: '/base/message/application/index',
+        component: () => import('@/views/base/message/application/index'),
+        name: '/base/message/application/index',
+        meta: { title: '应用管理', icon: 'dashboard', affix: true }
+      }, 
       {
-        path: '/createClient',
-        name: 'createClient',
-        hidden: true,
-        component: () => import('@/views/gateway/createClient'),
-        meta: { title: '创建客户端', icon: 'dashboard', affix: true }
-      },
+        path: '/base/message/topic/index',
+        component: () => import('@/views/base/message/topic/index'),
+        name: '/base/message/topic/index',
+        meta: { title: '主题管理', icon: 'dashboard', affix: true }
+      }, 
       {
-        path: '/addGatewayClient',
-        name: 'addGatewayClient',
-        hidden: true,
-        component: () => import('@/views/gateway/addGatewayClient'),
-        meta: { title: '添加网关客户端', icon: 'dashboard', affix: true }
-      },
+        path: '/base/message/sendMessage/index',
+        component: () => import('@/views/base/message/sendMessage/index'),
+        name: '/base/message/sendMessage/index',
+        meta: { title: '消息管理', icon: 'dashboard', affix: true }
+      }, 
       {
-        path: '/addClientGateway',
-        name: 'addClientGateway',
-        hidden: true,
-        component: () => import('@/views/gateway/addClientGateway'),
-        meta: { title: '添加客户端网关', icon: 'dashboard', affix: true }
-      },
+        path: '/base/message/exception/index',
+        component: () => import('@/views/base/message/exception/index'),
+        name: '/base/message/exception/index',
+        meta: { title: '异常消息', icon: 'dashboard', affix: true }
+      }, 
       {
-        path: '/addGroovyScript',
-        name: 'addGroovyScript',
-        hidden: true,
-        component: () => import('@/views/gateway/addGroovyScript'),
-        meta: { title: '添加规则组件', icon: 'dashboard', affix: true }
-      },
-      {
-        path: '/createBalanced',
-        name: 'createBalanced',
-        hidden: true,
-        component: () => import('@/views/gateway/createBalanced'),
-        meta: { title: '创建负载均衡', icon: 'dashboard', affix: true }
-      },
-
-
+        path: '/base/message/failMessage/index',
+        component: () => import('@/views/base/message/failMessage/index'),
+        name: '/base/message/failMessage/index',
+        meta: { title: '失败消息', icon: 'dashboard', affix: true }
+      }, 
+      // >>>>>>>>>>>>>> message_router_end   >>>>>>>>>>>>>>>>>>>>>
     ]
   },
   {

@@ -140,13 +140,13 @@ function drawBar2() {
 
       var lineOption = {
         title: {
-          text: "请求延迟(ms)",
+          text: "请求情况",
         },
         tooltip: {
           trigger: "axis",
         },
         legend: {
-          data: ["访问流量", "访问IP"],
+          data: ["请求成功", "请求失败"],
         },
         grid: {
           x: 40,
@@ -284,7 +284,7 @@ function drawBar2() {
         ],
         series: [
           {
-            name: "访问流量",
+            name: "请求成功",
             type: "line",
             smooth: true,
             data: [
@@ -308,7 +308,7 @@ function drawBar2() {
             },
           },
           {
-            name: "访问IP",
+            name: "请求失败",
             type: "line",
             smooth: true,
             data: [
