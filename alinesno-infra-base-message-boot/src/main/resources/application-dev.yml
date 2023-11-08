@@ -18,6 +18,18 @@ spring:
   devtools:
     restart:
       enabled: true
+      
+actable:
+  table:
+    auto: update
+  model:
+    pack: com.alinesno.infra.base.message.entity;
+  database:
+    type: mysql
+  index:
+    prefix: alinesno_base_message_idx_
+  unique:
+    prefix: alinesno_base_message_uni_
 
 # sa-token配置
 sa-token:
