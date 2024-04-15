@@ -86,6 +86,12 @@ export const constantRoutes = [
         meta: { title: '应用管理', icon: 'dashboard', affix: true }
       }, 
       {
+        path: '/base/message/analyse/index',
+        component: () => import('@/views/base/message/analyse/index'),
+        name: '/base/message/analyse/index',
+        meta: { title: '识别分析', icon: 'dashboard', affix: true }
+      }, 
+      {
         path: '/base/message/topic/index',
         component: () => import('@/views/base/message/topic/index'),
         name: '/base/message/topic/index',
@@ -98,9 +104,9 @@ export const constantRoutes = [
         meta: { title: '消息管理', icon: 'dashboard', affix: true }
       }, 
       {
-        path: '/base/message/exception/index',
-        component: () => import('@/views/base/message/exception/index'),
-        name: '/base/message/exception/index',
+        path: '/base/message/history/index',
+        component: () => import('@/views/base/message/history/index'),
+        name: '/base/message/history/index',
         meta: { title: '异常消息', icon: 'dashboard', affix: true }
       }, 
       {

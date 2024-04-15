@@ -9,7 +9,7 @@ import { parseStrEmpty } from "@/utils/ruoyi";
  */
 
 // 接口配置项
-var prefix = '/api/infra/base/message/message/' ;
+var prefix = '/api/infra/base/message/messageHistory/' ;
 var managerUrl = {
     datatables : prefix +"datatables" ,
     createUrl: prefix + 'add' ,
@@ -25,7 +25,7 @@ var managerUrl = {
 }
 
 // 查询数据库列表
-export function listMessage(query) {
+export function listMessageHistory(query) {
   return request({
     url: managerUrl.datatables ,
     method: 'post',
@@ -34,7 +34,7 @@ export function listMessage(query) {
 }
 
 // 查询数据库详细
-export function getMessage(databaseId) {
+export function getMessageHistory(databaseId) {
   return request({
     url: managerUrl.detailUrl + '/' + parseStrEmpty(databaseId),
     method: 'get'
@@ -42,7 +42,7 @@ export function getMessage(databaseId) {
 }
 
 // 新增数据库
-export function addMessage(data) {
+export function addMessageHistory(data) {
   return request({
     url: managerUrl.saveUrl ,
     method: 'post',
@@ -51,7 +51,7 @@ export function addMessage(data) {
 }
 
 // 修改数据库
-export function updateMessage(data) {
+export function updateMessageHistory(data) {
   return request({
     url: managerUrl.updateUrl ,
     method: 'put',
@@ -60,7 +60,7 @@ export function updateMessage(data) {
 }
 
 // 删除数据库
-export function delMessage(databaseId) {
+export function delMessageHistory(databaseId) {
   return request({
     url: managerUrl.removeUrl + '/' + parseStrEmpty(databaseId),
     method: 'delete'

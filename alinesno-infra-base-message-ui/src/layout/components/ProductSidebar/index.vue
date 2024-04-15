@@ -24,9 +24,10 @@ const router = useRouter();
 const menuItems = ref([
   {id:'2' , icon:'fa-brands fa-slack' , link:'/base/message/application/index' , desc:'应用管理'},
   {id:'3' , icon:'fa-solid fa-list-check' , link:'/base/message/topic/index' , desc:'主题管理'},
+  {id:'9' , icon:'fa-solid fa-computer' , link:'/base/message/analyse/index' , desc:'监控管理'},
   {id:'4' , icon:'fa-regular fa-envelope-open' , link:'/base/message/sendMessage/index' , desc:'消息管理'},
   {id:'5' , icon:'fa-solid fa-file-word' , link:'/base/message/failMessage/index' , desc:'失败消息'}, 
-  {id:'6' , icon:'fa-solid fa-bomb' , link:'/base/message/exception/index' , desc:'异常消息'},
+  {id:'6' , icon:'fa-solid fa-bomb' , link:'/base/message/history/index' , desc:'历史消息'},
   {id:'7' , icon:'fa-solid fa-at' , link:'/base/message/alert/index' , desc:'告警配置'},
 ]);
 
