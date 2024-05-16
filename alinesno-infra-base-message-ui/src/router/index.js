@@ -80,10 +80,10 @@ export const constantRoutes = [
         meta: { title: '告警配置', icon: 'dashboard', affix: true }
       }, 
       {
-        path: '/base/message/application/index',
-        component: () => import('@/views/base/message/application/index'),
-        name: '/base/message/application/index',
-        meta: { title: '应用管理', icon: 'dashboard', affix: true }
+        path: '/base/message/project/index',
+        component: () => import('@/views/base/message/project/index'),
+        name: '/base/message/project/index',
+        meta: { title: '项目管理', icon: 'dashboard', affix: true }
       }, 
       {
         path: '/base/message/analyse/index',

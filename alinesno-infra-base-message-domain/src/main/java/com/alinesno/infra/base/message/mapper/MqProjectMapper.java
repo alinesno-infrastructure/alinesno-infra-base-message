@@ -1,7 +1,6 @@
 package com.alinesno.infra.base.message.mapper;
 
-import com.alinesno.infra.base.message.entity.MqApplicationEntity;
-import com.alinesno.infra.base.message.entity.MqMessageFailEntity;
+import com.alinesno.infra.base.message.entity.MqProjectEntity;
 import com.alinesno.infra.common.facade.mapper.repository.IBaseMapper;
 
 /**
@@ -11,5 +10,5 @@ import com.alinesno.infra.common.facade.mapper.repository.IBaseMapper;
  * @author luoxiaodong
  * @version 1.0.0
  */
-public interface MqApplicationMapper extends IBaseMapper<MqApplicationEntity> {
+public interface MqProjectMapper extends IBaseMapper<MqProjectEntity> {
 }
