@@ -18,10 +18,13 @@
 
 <script setup>
 
+import {ref} from "vue";
+
 const router = useRouter();
 
 // 菜单列表
 const menuItems = ref([
+  {id:'10' , icon:'fa-brands fa-slack' , link:'/base/message/application/index' , desc:'应用管理'},
   {id:'2' , icon:'fa-brands fa-slack' , link:'/base/message/project/index' , desc:'项目管理'},
   {id:'3' , icon:'fa-solid fa-list-check' , link:'/base/message/topic/index' , desc:'主题管理'},
   {id:'9' , icon:'fa-solid fa-computer' , link:'/base/message/analyse/index' , desc:'监控管理'},
@@ -29,6 +32,7 @@ const menuItems = ref([
   {id:'5' , icon:'fa-solid fa-file-word' , link:'/base/message/failMessage/index' , desc:'失败消息'}, 
   {id:'6' , icon:'fa-solid fa-bomb' , link:'/base/message/history/index' , desc:'历史消息'},
   {id:'7' , icon:'fa-solid fa-at' , link:'/base/message/alert/index' , desc:'告警配置'},
+
 ]);
 
 // 打开服务市场
